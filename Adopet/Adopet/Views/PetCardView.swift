@@ -14,7 +14,7 @@ struct PetCardView: View {
     let pet: Pet
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             AsyncImage(url: URL(string: pet.photos[0])) { image in
                 image
                     .resizable()
@@ -22,7 +22,6 @@ struct PetCardView: View {
             } placeholder: {
                 Color.gray
             }
-            
             
             VStack {
                 HStack {
@@ -47,6 +46,7 @@ struct PetCardView: View {
             .padding(.horizontal)
             .padding(.bottom)
         }
+        
         .enableInjection()
     }
 }

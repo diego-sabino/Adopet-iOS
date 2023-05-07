@@ -17,7 +17,10 @@ struct FeedView: View {
     private let apiManager = APIManager()
     
     var body: some View {
-            ZStack {
+            VStack(spacing: 0) {
+                HeaderView()
+                    .background(Color("BackgroundDefault"))
+                
                 List(data, id: \._id) { item in
                     PetCardView(pet: item)
                         .background(Color("BackgroundCard"))
@@ -26,8 +29,9 @@ struct FeedView: View {
                         .padding(.vertical)
                         .listRowInsets(EdgeInsets())
                         .listRowSeparator(.hidden)
+                        .padding(.horizontal)
                 }
-                
+                .listStyle(PlainListStyle())
                 .scrollContentBackground(.hidden)
                 .onAppear { fetchData() }
             }
