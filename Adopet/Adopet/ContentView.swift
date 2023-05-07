@@ -16,16 +16,12 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color("BackgroundDefault")
-                .ignoresSafeArea()
-            
             VStack {
                 Image("MainLogo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.top, 20)
                     
-    
                 VStack(spacing: 10) {
                     TextField("Email", text: $email)
                         .keyboardType(.emailAddress)

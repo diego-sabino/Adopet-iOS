@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8528CA362A07088600239454 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528CA352A07088600239454 /* APIManager.swift */; };
 		85B899B22A063DA800693AF2 /* AdopetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B899B12A063DA800693AF2 /* AdopetApp.swift */; };
 		85B899B42A063DA800693AF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B899B32A063DA800693AF2 /* ContentView.swift */; };
 		85B899B62A063DAA00693AF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B899B52A063DAA00693AF2 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8528CA352A07088600239454 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		85B899AE2A063DA800693AF2 /* Adopet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adopet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B899B12A063DA800693AF2 /* AdopetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdopetApp.swift; sourceTree = "<group>"; };
 		85B899B32A063DA800693AF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8528CA342A07087100239454 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8528CA352A07088600239454 /* APIManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		85B899A52A063DA800693AF2 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +63,7 @@
 		85B899B02A063DA800693AF2 /* Adopet */ = {
 			isa = PBXGroup;
 			children = (
+				8528CA342A07087100239454 /* Services */,
 				85B899B12A063DA800693AF2 /* AdopetApp.swift */,
 				85B899B32A063DA800693AF2 /* ContentView.swift */,
 				85B899B52A063DAA00693AF2 /* Assets.xcassets */,
@@ -145,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8528CA362A07088600239454 /* APIManager.swift in Sources */,
 				85B899B42A063DA800693AF2 /* ContentView.swift in Sources */,
 				85B899B22A063DA800693AF2 /* AdopetApp.swift in Sources */,
 			);
