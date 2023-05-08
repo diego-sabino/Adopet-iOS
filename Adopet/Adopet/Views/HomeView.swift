@@ -15,6 +15,13 @@ struct HomeView: View {
         VStack {
             HeaderView()
             
+            Image("HomeBanner")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding(.vertical)
+                .padding(.horizontal, 6)
+
+            
             Spacer()
             
             Text("Home page")

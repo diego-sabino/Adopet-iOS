@@ -23,11 +23,6 @@ struct HeaderView: View {
                 
                 Spacer()
                 
-                Text("Home")
-                    .font(.custom("Avenir Light", size: 22))
-                
-                Spacer()
-                
                 Image(systemName: "person.crop.circle")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -50,6 +45,7 @@ struct HeaderView: View {
             }
             .opacity(0.8)
             .padding(.horizontal)
+            .padding(.top, 10)
             
         }
         .enableInjection()
