@@ -19,7 +19,7 @@ struct FeedView: View {
     var body: some View {
             VStack(spacing: 0) {
                 HeaderView()
-                    .background(Color("BackgroundDefault"))
+                    //.background(Color("BackgroundDefault"))
                 
                 List(data, id: \._id) { item in
                     PetCardView(pet: item)

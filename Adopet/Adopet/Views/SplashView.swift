@@ -51,7 +51,7 @@ struct SplashView: View {
                     .cornerRadius(10)
                     .shadow(radius: 8)
                     */
-                    NavigationLink(destination: FeedView()) {
+                    NavigationLink(destination: HomeView()) {
                         Text("Continue")
                         .frame(width: 200, height: 63)
                         .background(Color("SplashButton"))
