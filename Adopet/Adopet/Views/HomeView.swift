@@ -11,11 +11,13 @@ import Inject
 struct HomeView: View {
     @ObservedObject private var injectorObserver = Inject.observer
     
+    @State private var selectedCategoryIndex: Int? = nil
+    
     let petCategories = [
         ("CatIcon", "Cat"),
         ("DogIcon", "Dog"),
         ("TurtleIcon", "Turtle"),
-        ("RabbitIcon", "Rabbit")
+        ("HamsIcon", "Hams")
     ]
     
     var body: some View {
@@ -25,7 +27,7 @@ struct HomeView: View {
             Image("HomeBanner")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .padding(.vertical)
+                .padding(.top, 5)
                 .padding(.horizontal, 6)
             
             VStack {
@@ -33,10 +35,15 @@ struct HomeView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                 
-                ScrollView (.horizontal) {
+                ScrollView(.horizontal) {
                     HStack {
-                        ForEach(petCategories, id: \.0) { category in
-                            petCategoryHStack(imageName: category.0, text: category.1)
+                        ForEach(petCategories.indices, id: \.self) { index in
+                            petCategoryHStack(index: index)
+                                .onTapGesture {
+                                    selectedCategoryIndex = index
+                                }
+                                .background(selectedCategoryIndex == index ? Color("SplashButton"): Color.clear)
+                                .cornerRadius(32)
                         }
                     }
                     .padding(.horizontal)
@@ -54,19 +61,18 @@ struct HomeView: View {
         .enableInjection()
     }
     
-    func petCategoryHStack(imageName: String, text: String) -> some View {
-        HStack(spacing: -5) {
-            Image(imageName)
+    func petCategoryHStack(index: Int) -> some View {
+        let category = petCategories[index]
+        
+        return HStack(spacing: -5) {
+            Image(category.0)
                 .resizable()
                 .frame(width: 30, height: 30)
                 .padding(3)
-            Text(text)
+            Text(category.1)
                 .padding(5)
                 .padding(.horizontal, 8)
         }
-        .background(Color("SplashButton"))
         .cornerRadius(32)
-        
     }
 }
-
