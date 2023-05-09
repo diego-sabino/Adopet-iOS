@@ -9,7 +9,14 @@ import SwiftUI
 import Inject
 
 struct HomeView: View {
-    @ObservedObject private var iO = Inject.observer
+    @ObservedObject private var injectorObserver = Inject.observer
+    
+    let petCategories = [
+        ("CatIcon", "Cat"),
+        ("DogIcon", "Dog"),
+        ("TurtleIcon", "Turtle"),
+        ("RabbitIcon", "Rabbit")
+    ]
     
     var body: some View {
         VStack {
@@ -20,7 +27,22 @@ struct HomeView: View {
                 .aspectRatio(contentMode: .fit)
                 .padding(.vertical)
                 .padding(.horizontal, 6)
-
+            
+            VStack {
+                Text("Pet Category")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+                
+                ScrollView (.horizontal) {
+                    HStack {
+                        ForEach(petCategories, id: \.0) { category in
+                            petCategoryHStack(imageName: category.0, text: category.1)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.bottom)
+                }
+            }
             
             Spacer()
             
@@ -30,6 +52,21 @@ struct HomeView: View {
         }
         .navigationBarBackButtonHidden(true)
         .enableInjection()
+    }
+    
+    func petCategoryHStack(imageName: String, text: String) -> some View {
+        HStack(spacing: -5) {
+            Image(imageName)
+                .resizable()
+                .frame(width: 30, height: 30)
+                .padding(3)
+            Text(text)
+                .padding(5)
+                .padding(.horizontal, 8)
+        }
+        .background(Color("SplashButton"))
+        .cornerRadius(32)
+        
     }
 }
 

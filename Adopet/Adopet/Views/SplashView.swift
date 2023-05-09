@@ -18,7 +18,7 @@ struct SplashView: View {
                 Image("SplashBackground")
                     .resizable()
                     .scaledToFit()
-                    .padding(.top)
+                    
                     .padding(.bottom, 50)
                     .edgesIgnoringSafeArea(.top)
                 
@@ -42,28 +42,19 @@ struct SplashView: View {
                 
                 Spacer()
                 
-                HStack {
-                    /* Button("Sign Up") {}
-                    .frame(width: 170, height: 63)
-                    .background(.white)
+                NavigationLink(destination: HomeView()) {
+                    Text("Continue")
+                    .frame(width: 200, height: 63)
+                    .background(Color("SplashButton"))
                     .font(.system(size: 23))
-                    .foregroundColor(Color("SplashButton"))
+                    .foregroundColor(.white)
                     .cornerRadius(10)
                     .shadow(radius: 8)
-                    */
-                    NavigationLink(destination: HomeView()) {
-                        Text("Continue")
-                        .frame(width: 200, height: 63)
-                        .background(Color("SplashButton"))
-                        .font(.system(size: 23))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 8)
-                    }
+                    .padding(.top, 50)
                 }
                 Spacer()
             }
-            .background(Color("SplashBackground"))
+            //.background(Color("SplashBackground"))
             .edgesIgnoringSafeArea(.all)
         }
         .enableInjection()

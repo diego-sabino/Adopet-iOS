@@ -13,8 +13,7 @@ struct ContentView: View {
     
     
     var body: some View {
-        NavigationView {
-            //LoginView()
+        ZStack {
             SplashView()
         }
         .enableInjection()

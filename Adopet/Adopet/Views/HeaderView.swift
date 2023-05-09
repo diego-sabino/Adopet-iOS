@@ -48,6 +48,7 @@ struct HeaderView: View {
             .padding(.top, 10)
             
         }
+        .padding(.top)
         .enableInjection()
     }
 }
