@@ -18,7 +18,6 @@ struct SplashView: View {
                 Image("SplashBackground")
                     .resizable()
                     .scaledToFit()
-                    
                     .padding(.bottom, 50)
                     .edgesIgnoringSafeArea(.top)
                 

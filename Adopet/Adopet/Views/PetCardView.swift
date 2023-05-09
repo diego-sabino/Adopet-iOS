@@ -18,7 +18,9 @@ struct PetCardView: View {
             AsyncImage(url: URL(string: pet.photos[0])) { image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 270, height: 220)
+                    
             } placeholder: {
                 Color.gray
             }

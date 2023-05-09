@@ -12,6 +12,8 @@ struct HomeView: View {
     @ObservedObject private var injectorObserver = Inject.observer
     
     @State private var selectedCategoryIndex: Int? = nil
+    @State private var data: [Pet] = []
+    private let apiManager = APIManager()
     
     let petCategories = [
         ("CatIcon", "Cat"),
@@ -53,10 +55,26 @@ struct HomeView: View {
             
             Spacer()
             
-            Text("Home page")
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 0) {
+                    ForEach(data.prefix(2), id: \._id) { item in
+                        PetCardView(pet: item)
+                            .frame(width: 270, height: 300)
+                            .background(.white)
+                            .foregroundColor(.gray)
+                            .cornerRadius(10)
+                            .shadow(radius: 5)
+                            .padding(.vertical)
+                            .padding(.horizontal)
+                    }
+                }
+            }
+            //.listStyle(PlainListStyle())
+
             
             Spacer()
         }
+        .onAppear { fetchData() }
         .navigationBarBackButtonHidden(true)
         .enableInjection()
     }
@@ -75,4 +93,13 @@ struct HomeView: View {
         }
         .cornerRadius(32)
     }
+      func fetchData() {
+          apiManager.fetchData { result in
+              if let result = result {
+                  DispatchQueue.main.async {
+                      self.data = result
+                  }
+              }
+          }
+      }
 }
