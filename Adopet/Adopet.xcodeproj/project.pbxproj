@@ -18,6 +18,7 @@
 		85B899B62A063DAA00693AF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B899B52A063DAA00693AF2 /* Assets.xcassets */; };
 		85B899B92A063DAA00693AF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B899B82A063DAA00693AF2 /* Preview Assets.xcassets */; };
 		85B899C12A063DE000693AF2 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 85B899C02A063DE000693AF2 /* Inject */; };
+		85D475302A08C476006C53E9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D4752F2A08C476006C53E9 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		85B899B32A063DA800693AF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		85B899B52A063DAA00693AF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85B899B82A063DAA00693AF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		85D4752F2A08C476006C53E9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				850153652A07441E00315538 /* PetCardView.swift */,
 				850153672A074DE900315538 /* HeaderView.swift */,
 				855A61F02A089B17003D8D6C /* SplashView.swift */,
+				85D4752F2A08C476006C53E9 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85D475302A08C476006C53E9 /* HomeView.swift in Sources */,
 				8528CA3B2A07105100239454 /* FeedView.swift in Sources */,
 				855A61F12A089B17003D8D6C /* SplashView.swift in Sources */,
 				8528CA362A07088600239454 /* APIManager.swift in Sources */,
