@@ -14,7 +14,7 @@ struct HeaderView: View {
     @State var search: String = ""
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HStack {
                 Image(systemName: "line.horizontal.3")
                     .resizable()
@@ -47,7 +47,7 @@ struct HeaderView: View {
             .padding(.horizontal)
             .padding(.top, 10)
         }
-        .padding(.top)
+      
         .enableInjection()
     }
 }

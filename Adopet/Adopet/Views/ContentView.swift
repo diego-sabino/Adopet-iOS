@@ -11,12 +11,9 @@ import Inject
 struct ContentView: View {
     @ObservedObject private var iO = Inject.observer
     
-    
     var body: some View {
-        NavigationView {
             SplashView()
             //LoginView()
-        }
         .enableInjection()
     }
 }

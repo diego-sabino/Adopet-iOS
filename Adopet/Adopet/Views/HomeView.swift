@@ -36,6 +36,7 @@ struct HomeView: View {
                 Text("Pet Category")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
+                    
                 
                 ScrollView(.horizontal) {
                     HStack {
@@ -48,12 +49,12 @@ struct HomeView: View {
                                 .cornerRadius(32)
                         }
                     }
+                    
                     .padding(.horizontal)
-                    .padding(.bottom)
                 }
+                
             }
-            
-            Spacer()
+            .offset(y: -25)
             
             ScrollView(.horizontal) {
                 LazyHStack(spacing: 0) {
@@ -64,15 +65,33 @@ struct HomeView: View {
                             .foregroundColor(.gray)
                             .cornerRadius(10)
                             .shadow(radius: 5)
-                            .padding(.vertical)
                             .padding(.horizontal)
                     }
                 }
             }
-            //.listStyle(PlainListStyle())
+ 
+            HStack {
+                Image(systemName: "house")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 25)
+                
+                Spacer()
+                
+                Image(systemName: "plus.app")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 25)
+                
+                Spacer()
 
+                Image(systemName: "heart")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 25)
+            }
+            .padding(.horizontal, 60)
             
-            Spacer()
         }
         .onAppear { fetchData() }
         .navigationBarBackButtonHidden(true)
